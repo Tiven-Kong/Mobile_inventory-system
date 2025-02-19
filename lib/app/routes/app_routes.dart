@@ -7,7 +7,8 @@ abstract class Routes {
   static const LOGIN = _Paths.LOGIN;
   static const MAIN = _Paths.MAIN;
   static const MATERIAL = _Paths.MATERIAL;
-
+  static const DASHBOARD = _Paths.DASHBOARD;
+  static const APPBAR = _Paths.APPBAR;
 }
 
 abstract class _Paths {
@@ -16,5 +17,6 @@ abstract class _Paths {
   static const LOGIN = '/login';
   static const MAIN = '/main';
   static const MATERIAL = '/material';
-
+  static const DASHBOARD = '/dashboard';
+  static const APPBAR = '/appbar';
 }

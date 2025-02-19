@@ -17,6 +17,8 @@ class MaterialController extends GetxController {
   void onInit() {
     super.onInit();
     fetchMaterial();
+
+    //fetchMaterial again when have serach change value
     debounce(search, (_) => fetchMaterial(), time: Duration(milliseconds: 500));
   }
 

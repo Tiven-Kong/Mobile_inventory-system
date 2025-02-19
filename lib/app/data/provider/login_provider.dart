@@ -24,8 +24,6 @@ class ApiProvider {
         }),
       );
 
-      // Logging response details
-      print("Login Request: [POST] /login");
       print("Status Code: ${response.statusCode}");
       print("Response Data: ${response.data}");
 

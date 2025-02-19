@@ -12,7 +12,6 @@ class LoginController extends GetxController {
     try {
       final response = await _apiProvider.login(email: email, password: password);
 
-      Get.back(); // Close the loading dialog
 
       if (response != null && (response.statusCode == 200 || response.statusCode == 201)) {
         final data = response.data;
@@ -20,7 +19,7 @@ class LoginController extends GetxController {
           String newToken = data['authorisation']['token'];
           box.write('token', newToken);
           Get.offAllNamed(Routes.MATERIAL);
-          return response.statusCode!;
+         return response.statusCode! ;
         }
       }
 

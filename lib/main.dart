@@ -9,6 +9,7 @@ Future<void> main() async {
   await GetStorage.init();
   runApp(
     GetMaterialApp(
+      debugShowCheckedModeBanner: false,
     title: "Application",
       initialBinding: ApiBinding(),  // Bind ApiProvider
       initialRoute: AppPages.INITIAL,  // Set initial route

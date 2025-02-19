@@ -18,7 +18,7 @@ class DropdownExample extends StatelessWidget {
                 onChanged: (newValue) {
                   if (newValue != null) {
                     controller.selectedValue.value = newValue;
-                    controller.fetchMaterial();
+                    controller.fetchMaterial_Status();
                   }
                 },
                 items: [

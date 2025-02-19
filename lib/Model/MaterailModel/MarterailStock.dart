@@ -1,11 +1,11 @@
-class MaterialModel {
+class MaterialStockModel {
   int? rawMaterialCount;
   int? rawMaterialScrapCount;
   String? currentStockValueInUsd;
   String? currentStockValueInRiel;
 
   // Constructor
-  MaterialModel({
+  MaterialStockModel({
     this.rawMaterialCount,
     this.rawMaterialScrapCount,
     this.currentStockValueInUsd,
@@ -13,11 +13,13 @@ class MaterialModel {
   });
 
   // Factory constructor to create an instance from JSON data
-  MaterialModel.fromJson(Map<String, dynamic> json) {
-    rawMaterialCount = json['raw_material_count'];
-    rawMaterialScrapCount = json['raw_material_scrap_count'];
-    currentStockValueInUsd = json['current_stock_value_in_usd'];
-    currentStockValueInRiel = json['current_stock_value_in_riel'];
+  factory MaterialStockModel.fromJson(Map<String, dynamic> json) {
+    return MaterialStockModel(
+      rawMaterialCount: json['raw_material_count'] as int?,
+      rawMaterialScrapCount: json['raw_material_scrap_count'] as int?,
+      currentStockValueInUsd: json['current_stock_value_in_usd'] as String?,
+      currentStockValueInRiel: json['current_stock_value_in_riel'] as String?,
+    );
   }
 
   // Method to convert the instance into a JSON map
