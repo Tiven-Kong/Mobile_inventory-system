@@ -19,8 +19,6 @@ class DashboardController extends GetxController {
     super.onInit();
     fetch_materail_StockSummary();
     fetch_product_Summary() ;
-
-
   }
 
 

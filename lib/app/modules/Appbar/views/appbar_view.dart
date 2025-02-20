@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:vuthy_mobile/app/theme/colors_theme.dart';
 import '../controllers/appbar_controller.dart';
 
 class AppbarView extends GetView<AppbarController> {
@@ -9,8 +10,9 @@ class AppbarView extends GetView<AppbarController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor:AppColors.whitecolor,
         centerTitle: true,
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications),

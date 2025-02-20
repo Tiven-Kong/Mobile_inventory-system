@@ -13,7 +13,7 @@ final String value ;
       width:Get.width/2.2
       ,
       height: 80,
-      decoration: BoxDecoration(color: Colors.yellow[200] , borderRadius: BorderRadius.circular(20)),
+      decoration: BoxDecoration(color: Colors.grey[400] , borderRadius: BorderRadius.circular(20)),
       child:
       Row(
         mainAxisAlignment: MainAxisAlignment.center,

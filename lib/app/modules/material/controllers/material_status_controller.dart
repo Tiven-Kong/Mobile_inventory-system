@@ -9,16 +9,17 @@ import '../../login/controllers/login_provider.dart';
 class Material_StatusController extends GetxController {
   RxList materials_status = <Data>[].obs;
   RxBool isLoading = true.obs;
+  RxBool displayStatus  = false.obs ;
   final dio = Dio();
-  final selectedValue = ''.obs;
-  final pageStatue = 1.obs ;
+  RxString selectedValue = ''.obs;
+  RxInt pageStatue = 1.obs ;
   final LoginController controller = Get.put(LoginController());
   RxBool StatusScreen = false.obs ;
 
   @override
   void onInit() {
     super.onInit();
-    fetchMaterial_Status();
+
     debounce(selectedValue, (_) => fetchMaterial_Status(), time: Duration(milliseconds: 500));
   }
 
