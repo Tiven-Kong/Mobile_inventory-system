@@ -7,6 +7,7 @@ import 'package:vuthy_mobile/app/routes/app_pages.dart';
 class LoginController extends GetxController {
   final box = GetStorage();
   final _apiProvider = Get.find<ApiProvider>();
+  RxList getUserInformation = [].obs ;
 
   Future<int> login({required String email, required String password}) async {
     try {
@@ -21,7 +22,14 @@ class LoginController extends GetxController {
           Get.offAllNamed(Routes.MATERIAL);
          return response.statusCode! ;
         }
-      }
+        // if(data['user']!=null){
+        //     final List<dynamic> dataList = data['user'] ?? [];
+        //     getUserInformation.value = dataList.toList();
+        //
+        //   }
+
+        }
+
 
       // If login fails, throw an exception
       throw Exception("Invalid credentials");

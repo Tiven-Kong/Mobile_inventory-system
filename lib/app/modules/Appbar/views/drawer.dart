@@ -53,18 +53,32 @@ final DashboardController controller = Get.put(DashboardController()) ;
             ),
             ListTile(
               leading: const Icon(Icons.person),
+              title: const Text('User'),
+              onTap: () {
+                Get.toNamed("/user");
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.production_quantity_limits),
+              title: const Text('Products'),
+              onTap: () {
+                Get.toNamed("/product");
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.smart_button_outlined),
               title: const Text('Marterail'),
               onTap: () {
                 Get.toNamed("/material");
               },
             ),
-            ListTile(
-              leading: const Icon(Icons.logout),
-              title: const Text('Logout'),
-              onTap: () {
-                Get.toNamed("/login");
-              },
-            ),
+            // ListTile(
+            //   leading: const Icon(Icons.logout),
+            //   title: const Text('Logout'),
+            //   onTap: () {
+            //     Get.toNamed("/login");
+            //   },
+            // ),
           ],
         ),
       ),

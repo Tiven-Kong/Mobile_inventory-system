@@ -9,6 +9,6 @@ class Tbtext extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text  , style:GoogleFonts.poppins(textStyle: TextStyle(color:AppColors.whitecolor , fontSize: 20 , fontWeight: FontWeight.bold)),) ;
+    return Text(text  , style:GoogleFonts.poppins(textStyle: TextStyle(color:AppColors.blackcolor , fontSize: 20 , fontWeight: FontWeight.bold)),) ;
   }
 }

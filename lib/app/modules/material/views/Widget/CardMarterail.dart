@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:vuthy_mobile/app/widget/title_inbackground.dart';
+
+import '../../../../widget/normal_text.dart';
 
 class Card_marterail extends StatelessWidget {
    Card_marterail({super.key , required this.icon_marterail , required this.tittle , required this.value});
@@ -25,8 +28,8 @@ final String value ;
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(tittle) ,
-                Text(value) ,
+                Ntext(text: tittle),
+                Ntext(text: value,) ,
               ],
             ),
           )

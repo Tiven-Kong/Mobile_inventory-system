@@ -10,6 +10,8 @@ import 'package:get/get.dart';
 class DashboardController extends GetxController {
   RxList <MaterialStockModel>materail_StockSummary = <MaterialStockModel>[].obs;
   RxList<ProdcutStockModel>product_StockSummary  = <ProdcutStockModel>[].obs;
+
+
   RxBool isLoading = true.obs;
   final dio = Dio();
   final LoginController controller = Get.put(LoginController());

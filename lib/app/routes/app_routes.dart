@@ -9,6 +9,9 @@ abstract class Routes {
   static const MATERIAL = _Paths.MATERIAL;
   static const DASHBOARD = _Paths.DASHBOARD;
   static const APPBAR = _Paths.APPBAR;
+  static const C_HART = _Paths.C_HART;
+  static const USER = _Paths.USER;
+  static const PRODUCT = _Paths.PRODUCT;
 }
 
 abstract class _Paths {
@@ -19,4 +22,8 @@ abstract class _Paths {
   static const MATERIAL = '/material';
   static const DASHBOARD = '/dashboard';
   static const APPBAR = '/appbar';
+  static const CHART = '/chart';
+  static const C_HART = '/c-hart';
+  static const USER = '/user';
+  static const PRODUCT = '/product';
 }

@@ -15,7 +15,7 @@ class LoginView extends GetView<LoginController> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('LoginView'),
+
         centerTitle: true,
       ),
       body: Form(

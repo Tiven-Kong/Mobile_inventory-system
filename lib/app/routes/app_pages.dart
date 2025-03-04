@@ -12,14 +12,17 @@ import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_view.dart';
 import '../modules/material/bindings/material_binding.dart';
 import '../modules/material/views/material_view.dart';
+import '../modules/product/bindings/product_binding.dart';
+import '../modules/product/views/product_view.dart';
+import '../modules/user/bindings/user_binding.dart';
+import '../modules/user/views/user_view.dart';
 
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.LOGIN
-  ;
+  static const INITIAL = Routes.LOGIN;
 
   static final routes = [
     GetPage(
@@ -48,9 +51,14 @@ class AppPages {
       binding: DashboardBinding(),
     ),
     GetPage(
-      name: _Paths.APPBAR,
-      page: () => const AppbarView(),
-      binding: AppbarBinding(),
+      name: _Paths.USER,
+      page: () => UserView(),
+      binding: UserBinding(),
+    ),
+    GetPage(
+      name: _Paths.PRODUCT,
+      page: () =>  ProductView(),
+      binding: ProductBinding(),
     ),
   ];
 }
