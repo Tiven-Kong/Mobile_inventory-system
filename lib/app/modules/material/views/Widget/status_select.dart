@@ -15,10 +15,18 @@ class DropdownExample extends StatelessWidget {
                 value: controller.selectedValue.value.isNotEmpty
                     ? controller.selectedValue.value
                     : 'SelectStatus',
+
                 onChanged: (newValue) {
                   if (newValue != null) {
+
                     controller.selectedValue.value = newValue;
-                    controller.fetchMaterial();
+                    controller.displayStatus.value = true ;
+                    controller.fetchMaterial_Status();
+                    if(newValue =="SelectStatus"){
+                      controller.displayStatus.value = false ;
+                    }
+
+
                   }
                 },
                 items: [

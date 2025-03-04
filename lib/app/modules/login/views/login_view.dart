@@ -15,7 +15,7 @@ class LoginView extends GetView<LoginController> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('LoginView'),
+
         centerTitle: true,
       ),
       body: Form(
@@ -123,9 +123,10 @@ class LoginView extends GetView<LoginController> {
                                       );
 
                                       try {
-                                        final statusCode = await controller.login(email: email, password: password);
+                                        final response = await controller.login(email: email, password: password);
 
-                                        if (statusCode != 200 && statusCode != 201) {
+                                       // if throw Exception the Catch block will work
+                                        if (response != 200 && response != 201) {
                                           throw Exception("Invalid login credentials");
                                         }
 

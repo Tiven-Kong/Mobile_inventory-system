@@ -6,17 +6,21 @@ import '../../login/controllers/login_provider.dart';
 
 
 class MaterialController extends GetxController {
-  RxList materials = <Data>[].obs;
+  RxList<Data> materials = <Data>[].obs;
+
   RxBool isLoading = true.obs;
   final dio = Dio();
   final page = 1.obs;
   final search = "".obs;
-  final LoginController controller = Get.put(LoginController());
+  final LoginController controller = Get.find<LoginController>();
+
 
   @override
   void onInit() {
     super.onInit();
     fetchMaterial();
+
+    //fetchMaterial again when have serach change value
     debounce(search, (_) => fetchMaterial(), time: Duration(milliseconds: 500));
   }
 
@@ -42,6 +46,7 @@ class MaterialController extends GetxController {
         if (responseData != null && responseData.isNotEmpty) {
           final List<dynamic> dataList = responseData['data'] ?? [];
           materials.value = dataList.map((item) => Data.fromJson(item)).toList();
+
         } else {
           print('Response data is empty');
         }
@@ -73,6 +78,32 @@ class MaterialController extends GetxController {
     }
   }
 
+//delete
+
+  Future<void> delete(int id) async {
+    final response = await dio.delete(
+      'https://ims-api.bananacentercambodia.com/api/raw-material/$id',
+      options: Options(
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': 'Bearer ${controller.box.read('token')}',
+        },
+      ),
+    );
+
+    if (response.statusCode == 200) {
+      fetchMaterial() ;
+      print('Deleted successfully');
+    } else {
+      print('Failed to delete: ${response.statusCode}');
+    }
+  }
+
+
+
+
+
   void changePage(int newPage) {
     page.value = newPage;
     fetchMaterial();
@@ -82,4 +113,6 @@ class MaterialController extends GetxController {
     search.value = _Text;
     fetchMaterial();
   }
+
+
 }

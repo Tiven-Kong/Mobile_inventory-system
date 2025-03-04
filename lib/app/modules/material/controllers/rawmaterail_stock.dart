@@ -9,10 +9,10 @@ class  MaterialStockController extends GetxController {
   RxBool isLoading = true.obs;
   final dio = Dio();
   final LoginController controller = Get.put(LoginController());
-  RxList<MaterialModel> materialStockItems = <MaterialModel>[].obs;
+  RxList<MaterialStockModel> materialStockItems = <MaterialStockModel>[].obs;
   @override
   void onInit() {
-    // TODO: implement onInit
+
     fetchMaterialData();
   }
   // Function to fetch material data
@@ -37,7 +37,7 @@ class  MaterialStockController extends GetxController {
         if (responseData != null) {
 
           materialStockItems.value = [
-            MaterialModel.fromJson(responseData)
+            MaterialStockModel.fromJson(responseData)
           ];
         } else {
           print('Response data is empty');

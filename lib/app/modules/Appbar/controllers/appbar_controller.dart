@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class MaterialViewController extends GetxController {
-  //TODO: Implement MaterialViewController
+class AppbarController extends GetxController {
+  //TODO: Implement AppbarController
 
   final count = 0.obs;
   @override
