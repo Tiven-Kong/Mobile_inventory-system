@@ -2,7 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:vuthy_mobile/app/theme/colors_theme.dart';
 import 'package:vuthy_mobile/app/widget/title_text.dart';
+import '../../../widget/normal_text_inbackground.dart';
 import '../../login/controllers/login_provider.dart';
 import '../controllers/material_controller.dart';
 import 'Widget/inputForm.dart';
@@ -139,12 +141,42 @@ class _UpdateViewState extends State<UpdateView> {
               key: _formKey,
               child: Column(
                 children: [
-                  Ttext(text: 'General Info'),
+                  Row(
+                    children: [
+                      Ttext(text: "Raw Materail"),
+                      Icon(Icons.chevron_right) ,
+                      NBtext(text: "Update",)
+                    ],
+                  ) ,
+                  SizedBox(height: 20,),
+                  Align(
+                      alignment: Alignment.topLeft,
+                      child: ElevatedButton(onPressed: (){
+
+                        Get.back();
+
+                      }, child:SizedBox(
+                        width: 70,
+                        child: Row(
+                          children: [
+                            Icon(Icons.arrow_back_ios , size: 20, color: Colors.black,),
+                            SizedBox(width: 10,),
+                            Text("Back"  ,style: TextStyle(color:AppColors.blackcolor,)),
+
+                          ],
+                        ),
+                      ))) ,
+                  SizedBox(height: 20,),
+                  Align(
+                      alignment: Alignment.topLeft,
+                      child: Ttext(text: 'General Info')),
                   InputForm(controll_er: _materialName, tittle: "Material Name"),
                   InputForm(controll_er: _materialCode, tittle: "Material Code (Auto Generated)"),
                   InputForm(controll_er: _expirydate, tittle: "Expiry Date"),
 
-                  Ttext(text: 'Stock Info'),
+                  Align(
+                      alignment: Alignment.topLeft,
+                      child: Ttext(text: 'Stock Info')),
                   InputForm(controll_er: _quantity, tittle: "Quantity"),
                   InputForm(controll_er: _remainingQuantity, tittle: "Remaining Quantity"),
                   InputForm(controll_er: _rawMaterialCategory, tittle: "Raw Material Category"),
@@ -153,17 +185,23 @@ class _UpdateViewState extends State<UpdateView> {
                   InputForm(controll_er: _packageSize, tittle: "Package Size"),
                   InputForm(controll_er: _location, tittle: "Location"),
 
-                  Ttext(text: 'Currency Info'),
+                  Align(
+                      alignment: Alignment.topLeft,
+                      child: Ttext(text: 'Currency Info')),
                   InputForm(controll_er: _unitPriceUSD, tittle: "Unit Price in USD"),
                   InputForm(controll_er: _totalValueUSD, tittle: "Total Price in USD"),
                   InputForm(controll_er: _exchangeUSD, tittle: "Exchange Rate From USD to Riel"),
 
-                  Ttext(text: 'Riel Currency Info'),
+                  Align(
+                      alignment: Alignment.topLeft,
+                      child: Ttext(text: 'Riel Currency Info')),
                   InputForm(controll_er: _unitPriceRiel, tittle: "Unit Price in Riel"),
                   InputForm(controll_er: _totalValueRiel, tittle: "Total Price in Riel"),
                   InputForm(controll_er: _exchangeRiel, tittle: "Exchange Rate From Riel to USD"),
 
-                  Ttext(text: 'Description'),
+                  Align(
+                      alignment: Alignment.topLeft,
+                      child: Ttext(text: 'Description')),
                   InputForm(controll_er: _description, tittle: "Description"),
 
                   ElevatedButton(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_common/get_reset.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:vuthy_mobile/app/theme/colors_theme.dart';
 
 import '../../../widget/normal_text.dart';
@@ -10,7 +11,7 @@ import '../../dashboard/views/dashboard_view.dart';
 
 class widgetDrawer extends StatelessWidget {
     widgetDrawer({super.key});
-
+    final box = GetStorage();
 final DashboardController controller = Get.put(DashboardController()) ;
 
     @override
@@ -72,11 +73,20 @@ final DashboardController controller = Get.put(DashboardController()) ;
                 Get.toNamed("/material");
               },
             ),
+            ListTile(
+              leading: const Icon(Icons.smart_button_outlined),
+              title: const Text('Marterail'),
+              onTap: () {
+                box.remove('token');
+                print("Token after logout: ${box.read('token')}");
+                Get.offAllNamed("/login");
+              },
+            ),
             // ListTile(
             //   leading: const Icon(Icons.logout),
             //   title: const Text('Logout'),
             //   onTap: () {
-            //     Get.toNamed("/login");
+            //     Get.o("/login");
             //   },
             // ),
           ],
